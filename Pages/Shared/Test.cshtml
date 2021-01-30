@@ -1,0 +1,43 @@
+@page
+@model OfficeChecker.Pages.SitePages.EditListModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Edit Office</h2>
+<form asp-page="/SitePages/EditList" method="get" class="text-nowrap searchh">
+    <div class="form-actions no-color">
+        <p>
+            <input type="text" name="SearchString" placeholder="Address" value="" />
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </p>
+    </div>
+</form>
+
+<div class="container-fluid pinned-box">
+    <div class="row table">
+        @foreach (var item in Model.Offices) 
+        {
+            <div class="col-12">
+                <div>
+                    <div class="col-xs-6">
+                <a class="t-btn-tag btn-block" asp-area="" asp-page="/Offices/Edit" asp-route-id="@item.ID">
+                       <b> @Html.DisplayFor(modelItem => item.OfficeName) </b> <br> 
+                       <div class="suport-textt">
+                        @Html.DisplayFor(modelItem => item.Address) <br> 
+                        <p>Office Status: <i>@Html.DisplayFor(modelItem => item.OfficeStatus)</i></p>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="t-btn-tag btn-block" asp-area="" asp-page="/Offices/Edit" asp-route-id="@item.ID">Edit</a>
+                    </div>
+                    <div class="col">
+                        <a class="t-btn-tag btn-block" asp-area="" asp-page="/Offices/Delete" asp-route-id="@item.ID">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

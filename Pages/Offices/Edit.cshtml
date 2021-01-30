@@ -1,0 +1,371 @@
+@page
+@model OfficeChecker.Pages.Offices.EditModel
+@using OfficeChecker.Models
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Office @ViewData["integer test"]</h2>
+
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Office.ID" />
+    <div class="container-fluid">
+        <div class="row white-text">
+            <div class="col-md-5 card">
+
+                <div class="card-top1">
+                    <div class="card-title">
+                        <h5>  Info</h5>
+                    </div>
+                </div>
+                <div class="edit-text">
+                    <!-- Office name field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.OfficeName" class="control-label"><strong>Office Name</strong></label>
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.OfficeName" class="form-control"/>
+                            <span asp-validation-for="Office.OfficeName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- LocationType field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.LocationType" class="control-label"><strong>Location Type</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <select asp-for="Office.LocationType" asp-items="Html.GetEnumSelectList<locationType>()" class="form-control">
+                            <option selected="selected" value="">Please select</option>
+                        </select>
+                        <span asp-validation-for="Office.LocationType" class="text-danger"></span>                            
+                        </div>
+                    </div>
+
+                    <!-- Market unit field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.MarketUnit" class="control-label"><strong>Market Unit</strong></label>
+                        </div>
+                        <div class="col">
+                            <select asp-for="Office.MarketUnit" asp-items="Html.GetEnumSelectList<marketUnit>()" class="form-control">
+                            <option selected="selected" value="">Please select</option>
+                            </select>
+                            <span asp-validation-for="Office.MarketUnit" class="text-danger"></span>
+                        </div>
+                    </div>   
+                    <!-- Address text field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.Address" class="control-label"><strong>Address</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.Address" class="form-control" />
+                            <span asp-validation-for="Office.Address" class="text-danger"></span>                            
+                        </div>
+                    </div>
+                    <!-- City text field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.City" class="control-label"><strong>City</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.City" list="cities" class="form-control" />
+                            <span asp-validation-for="Office.City" class="text-danger"></span>
+                            <datalist id="cities">
+                                <option value="Ann Arbor"></option>
+                                <option value="Boise"></option>
+                                <option value="Chicago"></option>
+                                <option value="Culver City"></option>
+                                <option value="Detroit"></option>
+                                <option value="Irvine"></option>
+                                <option value="Livonia"></option>
+                                <option value="Los Angeles"></option>
+                                <option value="Minneapolis"></option>
+                                <option value="New York"></option>
+                                <option value="Peoria"></option>
+                                <option value="Rancho_Cordova"></option>
+                                <option value="Sacramento"></option>
+                                <option value="St Charles"></option>
+                                <option value="San Diego"></option> 
+                                <option value="San Francisco"></option>                              
+                                <option value="San Jose"></option>                              
+                                <option value="Troy"></option>
+                            </datalist>                            
+                        </div>
+                    </div>
+                    <!-- State text field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.State" class="control-label"><strong>State</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.State" list="states" class="form-control" />
+                            <span asp-validation-for="Office.State" class="text-danger"></span>  
+                            <datalist id="states">
+                                <option value="Alabama"></option>
+                                <option value="Alaska"></option>
+                                <option value="Arizona"></option>
+                                <option value="Arkansas"></option>
+                                <option value="California"></option>
+                                <option value="Colorado"></option>
+                                <option value="Connecticut"></option>
+                                <option value="Delaware"></option>
+                                <option value="Florida"></option>
+                                <option value="Georgia"></option>
+                                <option value="Hawaii"></option>
+                                <option value="Idaho"></option>
+                                <option value="Illinois"></option>
+                                <option value="Indiana"></option>
+                                <option value="Iowa"></option> 
+                                <option value="Kansas"></option>                              
+                                <option value="Kentucky"></option>                              
+                                <option value="Louisiana"></option>
+                                <option value="Maine"></option>
+                                <option value="Maryland"></option>
+                                <option value="Massachusetts"></option> 
+                                <option value="Michigan"></option>                              
+                                <option value="Minnesota"></option>                              
+                                <option value="Mississippi"></option>
+                                <option value="Missouri"></option>
+                                <option value="Montana"></option>
+                                <option value="Nebraska"></option> 
+                                <option value="Nevada"></option>                              
+                                <option value="New Hampshire"></option>                              
+                                <option value="New Jersey"></option>
+                                <option value="New Mexico"></option>
+                                <option value="New York"></option>
+                                <option value="North Carolina"></option> 
+                                <option value="North Dakota"></option>                              
+                                <option value="Ohio"></option>                              
+                                <option value="Oklahoma"></option>
+                                <option value="Oregon"></option>
+                                <option value="Pennsylvania"></option>
+                                <option value="Rhode Island"></option> 
+                                <option value="South Carolina"></option>                              
+                                <option value="South Dakota"></option>                              
+                                <option value="Tennessee"></option>
+                                <option value="Texas"></option>
+                                <option value="Utah"></option>
+                                <option value="Vermont"></option> 
+                                <option value="Virginia"></option>                              
+                                <option value="Washington"></option>                              
+                                <option value="West Virginia"></option>
+                                <option value="Wisconsin"></option>
+                                <option value="Wyoming"></option>
+                                                            
+                            </datalist>                           
+                        </div>
+                    </div>
+                    <!-- Zip text field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.Zip" class="control-label"><strong>Zip</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.Zip" class="form-control" />
+                            <span asp-validation-for="Office.Zip" class="text-danger"></span>                            
+                        </div>
+                    </div>
+                    <!-- PhoneNumber text field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.PhoneNumber" class="control-label"><strong>Phone Number</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.PhoneNumber" class="form-control" />
+                            <span asp-validation-for="Office.PhoneNumber" class="text-danger"></span>                            
+                        </div>
+                    </div>
+                    <!-- DressCode text field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.DressCode" class="control-label"><strong>Dress Code</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.DressCode" class="form-control" />
+                            <span asp-validation-for="Office.DressCode" class="text-danger"></span>                            
+                        </div>
+                    </div>
+                    <!-- AdditionalInfo text field-->
+                    <div class="row">
+                        <div class="col-4 text-nowrap form-group">
+                            <label asp-for="Office.AdditionalInfo" class="control-label"><strong>Additional Info</strong></label>                            
+                        </div>
+                        <div class="col">
+                            <input asp-for="Office.AdditionalInfo" class="form-control" />
+                            <span asp-validation-for="Office.AdditionalInfo" class="text-danger"></span>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="col no-padding">
+            <div class="col card">
+                <!--Title-->
+                <div class="card-top2">
+                    <div class="card-title">
+                        <h5>Services</h5>
+                    </div>
+                </div>
+                    <div class="edit-text">
+                        <!-- Office services-->
+                        <div class="row">
+                            <div class="col-4 text-nowrap form-group">
+                                <label asp-for="Office.OfficeServices" class="control-label"><strong>Office Services</strong></label>                                
+                            </div>
+                            <div class="col">
+                                <select asp-for="Office.OfficeServices" asp-items="Html.GetEnumSelectList<officeServices>()" class="form-control">
+                                <option selected="selected" value="">Please select</option>
+                            </select>
+                            <span asp-validation-for="Office.OfficeServices" class="text-danger"></span>                                
+                            </div>
+                        </div> 
+                        <!-- Office tech support-->
+                        <div class="row">
+                            <div class="col-4 text-nowrap form-group">
+                                <label asp-for="Office.TechSupport" class="control-label"><strong>Tech Support</strong></label>                                
+                            </div>
+                            <div class="col">
+                                <select asp-for="Office.TechSupport" asp-items="Html.GetEnumSelectList<techSupport>()" class="form-control">
+                                <option selected="selected" value="">Please select</option>
+                            </select>
+                            <span asp-validation-for="Office.TechSupport" class="text-danger"></span>                                
+                            </div>
+                        </div> 
+                        <!-- Reservable Space field-->
+                        <div class="row">
+                            <div class="col-4 text-nowrap form-group">
+                                <label asp-for="Office.ReservableSpace" class="control-label"><strong>Reservable Space</strong></label>                                
+                            </div>
+                            <div class="col">
+                                <input asp-for="Office.ReservableSpace" class="form-control"/>
+                            <span asp-validation-for="Office.ReservableSpace" class="text-danger"></span>                                
+                            </div>
+                        </div>                      
+                    </div>
+                </div>
+                <div>
+                    <div class="col card">
+
+                        <div class="card-top2">
+                            <div class="card-title">
+                                <h5>Covid</h5>
+                            </div>
+                        </div>
+                        <div class="edit-text">
+                            <div>
+            
+                        
+                            <!-- Office Status field-->
+                            <div class="row">
+                                <div class="col-4 text-nowrap form-group">
+                                    <label asp-for="Office.OfficeStatus" class="control-label"><strong>Office Status</strong></label>                                
+                                </div>
+                                <div class="col">
+                                    <select asp-for="Office.OfficeStatus" asp-items="Html.GetEnumSelectList<officeStatus>()" class="form-control">
+                                <option selected="selected" value="">Please select</option>
+                            </select>
+                            <span asp-validation-for="Office.OfficeStatus" class="text-danger"></span>                                
+                                </div>
+                            </div> 
+                            <!-- Visitors field-->
+                            <div class="row">
+                                <div class="col-4 text-nowrap form-group">
+                                    <label asp-for="Office.Visitors" class="control-label"><strong>Visitors</strong></label>                            
+                                </div>
+                                <div class="col">
+                                    <input asp-for="Office.Visitors" class="form-control" />
+                                <span asp-validation-for="Office.Visitors" class="text-danger"></span>                            
+                                </div>
+                            </div> 
+                            <!-- special considerations field-->
+                            <div class="row">
+                                <div class="col-4 text-nowrap form-group">
+                                    <label class="control-label"><strong>Visitors</strong></label> 
+                                </div>
+                                <div class="col">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle form-control special-buttonn" type="button" id="menu" data-toggle="dropdown">Select All That Apply
+                                        <span class="caret"></span></button>
+                                        <ul class="dropdown-menu dropdownn" role="menu" aria-labelledby="menu">
+                                            <li role="presentation"><div class="form-group dropdownn-item">
+                                                <label asp-for="Office.PhysicalDistancing" class="control-label"><strong>Physical Distancing</strong></label>
+                                                <input asp-for="Office.PhysicalDistancing" class="list-size" />
+                                                <span asp-validation-for="Office.PhysicalDistancing" class="text-danger"></span>
+                                            </div></li>
+                                            <li role="presentation"><div class="form-group dropdownn-item">
+                                                <label asp-for="Office.TemperatureChecks" class="control-label"><strong>Temp Checks</strong></label>
+                                                <input asp-for="Office.TemperatureChecks"class="list-size"/>
+                                                <span asp-validation-for="Office.TemperatureChecks" class="text-danger"></span>
+                                            </div> </li>
+                                            <li role="presentation"><div class="form-group dropdownn-item">
+                                                <label asp-for="Office.OtherProtocols" class="control-label"><strong>Other Protocols</strong></label>
+                                                <input asp-for="Office.OtherProtocols"/>
+                                                <span asp-validation-for="Office.OtherProtocols" class="text-danger"></span>
+                                            </div></li>
+                                            
+                                        </ul>
+                                    </div>                            
+                                </div>
+                            </div> 
+                            <!-- Face Coverings field-->
+                            <div class="row">
+                                <div class="col-4 text-nowrap form-group">
+                                    <label asp-for="Office.FaceCoverings" class="control-label"><strong>Face Coverings</strong></label>                            
+                                </div>
+                                <div class="col">
+                                    <select asp-for="Office.FaceCoverings" asp-items="Html.GetEnumSelectList<faceCovering>()" class="form-control">
+                                    <option selected="selected" value="">Please select</option>
+                                </select>
+                                <span asp-validation-for="Office.FaceCoverings" class="text-danger"></span>                            
+                                </div>
+                            </div> 
+                            <!-- Temperature Checking field-->
+                            <div class="row">
+                                <div class="col-4 text-nowrap form-group">
+                                    <label asp-for="Office.TemperatureChecking" class="control-label"><strong>Temperature Checking</strong></label>                            
+                                </div>
+                                <div class="col">
+                                    <select asp-for="Office.TemperatureChecking" asp-items="Html.GetEnumSelectList<temperatureChecking>()" class="form-control">
+                                    <option selected="selected" value="">Please select</option>
+                                </select>
+                                <span asp-validation-for="Office.TemperatureChecking" class="text-danger"></span>                            
+                                </div>
+                            </div> 
+                            <!-- Special Details field-->
+                            <div class="row">
+                                <div class="col-4 text-nowrap form-group">
+                                    <label asp-for="Office.SpecialDetails" class="control-label"><strong>Special Details</strong></label>                            
+                                </div>
+                                <div class="col">
+                                    <input asp-for="Office.SpecialDetails" class="form-control" />
+                                <span asp-validation-for="Office.SpecialDetails" class="text-danger"></span>                            
+                                </div>                      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 offset-4">
+                    <a asp-page="/SitePages/EditList" class="btn btn-secondary btn-block">Cancel</a>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary btn-block"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

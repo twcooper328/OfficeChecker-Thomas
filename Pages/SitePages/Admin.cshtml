@@ -1,0 +1,44 @@
+@page
+@model OfficeChecker.Pages.SitePages.TestModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12"> <!---Title-->
+            <h2 class="text-nowrap">Content Editor</h2>
+        </div>
+    </div>
+    <div class="row white-text">
+        <div class="container col-lg-4 card"> <!---Card Office-->
+            <div class="card-top1">
+                <h5 class="text-nowrap card-title">Office Information</h5>
+            </div>
+            <div class="admin-boxx">
+                <a class="t-btn-tagt btn-block text-nowrap text-center" asp-area="" asp-page="/SitePages/EditList">Edit an Office</a>
+                <a class="t-btn-tagt btn-block text-nowrap text-center" asp-area="" asp-page="/Offices/Create">Create an Office</a>
+            </div>
+            <div class="row">
+                
+            </div>
+        </div>
+        <div class="container col-lg-4 card"> <!---Card analyics-->
+            <div class="card-top1">
+                <h5 class="text-nowrap card-title">Analytics</h5>
+            </div>
+            <div class="admin-boxx">
+                <a class="t-btn-tagt text-nowrap btn-block text-center" asp-area="" asp-page="/SitePages/Analytics">Analytics</a>
+            </div>
+        </div>
+        <div class="container col card"> <!---Card feedback-->
+            <div class="card-top1">
+                <h5 class="text-nowrap card-title">Feedback</h5>
+            </div>
+            <div class="admin-boxx">
+                <a class="t-btn-tagt eeee text-nowrap btn-block text-center" asp-area="" asp-page="/Offices/Full">Feedback</a>
+            </div>
+        </div>
+    </div>
+</div>

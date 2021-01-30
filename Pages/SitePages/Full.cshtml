@@ -1,0 +1,28 @@
+@page
+@model OfficeChecker.Pages.SitePages.FullModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Search Results</h2>
+
+<div class="container-fluid pinned-box">
+    <div class="row table">
+        @foreach (var item in Model.Offices) 
+        {
+            <div class="col-12">
+                <a class="t-btn-tag btn-block" asp-area="" asp-page="/Offices/Location" asp-route-id="@item.ID">
+                       <b> @Html.DisplayFor(modelItem => item.OfficeName) </b> <br> 
+                       <div class="suport-textt">
+                        @Html.DisplayFor(modelItem => item.FullAddress) <br> 
+                        <p>Office Status: <i>@Html.DisplayFor(modelItem => item.OfficeStatus)</i></p>
+                        </div>
+                        </a>
+            </div>
+        }
+    </div>
+</div>
+
+
+

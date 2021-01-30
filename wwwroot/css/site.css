@@ -1,0 +1,328 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Button CSS ------------------------------------*/
+a {
+  color: #940fec;
+  text-decoration: none;
+  padding: 0px;
+}
+
+a:hover {
+  color: #1f1b2a;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #940fec;
+  border-color: #940fec;
+}
+
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: #1f1b2a;
+  border-color: #ffffff;
+}
+
+.eeee {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.t-btn-tag {
+  background-color: #434343;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.t-btn-tag:hover {
+  background-color: #940fec;
+  color: white;
+}
+
+.t-btn-tag a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.t-btn-tagt {
+  background-color: #940fec;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.t-btn-tagt:hover {
+  color: #ffffff;
+  background-color: #1f1b2a;
+  border-color: #ffffff;
+}
+
+.t-btn-tagt a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.t-btn-tagts {
+  background-color: #434343;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.t-btn-tagts:hover {
+  color: #ffffff;
+  background-color: #1f1b2a;
+  border-color: #ffffff;
+}
+
+.t-btn-tagts a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.navbar-iconss {
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+fa {
+color: rgb(114, 114, 114);
+}
+
+fa:hover {
+color: white;
+border-color: #932c9c;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: #eeeeee;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Styles for the HomePage 
+-------------------------------------------------- */
+
+/* Styles for All home page info boxes */
+.white-text {
+  color: #efefef;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.card {
+  background-color: #434343;
+  border-style: solid;
+  border-color: #666666;
+  margin: 5px;
+  padding: 0px;
+}
+
+.card.edcard {
+  min-height: 225px;
+}
+
+.card-top1 {
+  background-color: #666666;
+  
+}
+.card-top2 {
+  position: relative; 
+  padding-right: 200px;
+  background-color: #666666;
+}
+
+.card-title {
+  position: relative;
+  left: 20px;
+}
+
+.pinned-box {
+  padding-top: 35px;
+}
+
+.pin {
+  margin-bottom: 5px;   
+}
+
+.paddingg {
+  padding-left: 10px;
+}
+
+.card-text {
+  padding-left: 20px;
+}
+
+.edit-text {
+  padding: 20px;
+}
+/*-------------------*/
+
+
+.buttonn {
+  color: white;
+}
+
+.searchh {
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+
+input[type="text"]::placeholder {  
+                  
+  /* Firefox, Chrome, Opera */ 
+  color:rgb(126, 126, 126);
+}
+
+li.listt {
+  float: left;
+}
+
+
+
+
+.suport-textt {
+  color:rgb(233, 205, 229);
+}
+
+.homee {
+  position: relative;
+  margin-top: 100px;
+}
+
+.homee-box {
+  position: relative;
+  margin-top: 50px;
+  width: 50%;
+}
+
+.container.adminn {
+  margin: 0px;
+  padding-right: 0px;
+  
+}
+
+.container.adminn.leftt {
+  padding-left: 0px;
+}
+
+.admin-boxx {
+  margin: 5px;
+}
+
+
+
+.star{
+  color: #940fec;
+  outline-color: white;
+  font-size: 2.0rem;
+  padding: 0 1rem; /* space out the stars */
+  
+}
+.star::before{
+  
+  content: '\2606';    /* star outline */
+  cursor: pointer;
+}
+.star.rated::before{
+  /* the style for a selected star */
+  content: '\2605';  /* filled star */
+}
+
+.stars{
+    counter-reset: rateme 0;   
+    font-size: 2.0rem;
+    font-weight: 500;
+}
+.star.rated{
+    counter-increment: rateme 1;
+}
+
+.special-buttonn {
+  background-color: white;
+}
+
+
+
+.list-size {
+  size: 200%;
+  padding-left: 50px;
+}
+
+.grey-textt {
+  color: #434343;
+}
+
+.edit-itemm {
+  background-color: #343a40;
+  margin: 5px;
+  border-radius: 5px;
+}

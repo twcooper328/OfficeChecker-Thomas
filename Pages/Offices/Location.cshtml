@@ -1,0 +1,177 @@
+@page
+@model OfficeChecker.Pages.Offices.LocationModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var student = ViewData["Message"];
+}
+
+<div class="container-fluid">
+    <div class="row">
+            <!--Title-->
+            <h2>@Html.DisplayFor(model => model.Office.OfficeName)</h2>
+    </div>
+    <div class="row"> <!--Super-->
+        <div class="col-md-4">
+            
+            <div class="row white-text">
+                <!--card left row box-->
+                <div class="col card">
+
+                    <div class="card-top1">
+                        <div class="card-title">
+                            <h5> Info</h5>
+                        </div>
+                    </div>
+                    <!---Cards info-->
+                    <dl class="card-text">
+                        <dd>
+                            <p><b>Location Type - </b>@ViewData["LocationLabel"]</p>
+                        </dd>
+
+                        <hr>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Office.Address)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Office.Address)
+                        </dd>
+                        <hr>
+                        <dt>
+                            Phone
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Office.PhoneNumber)
+                        </dd>
+                        <hr>
+                        <dt>
+                            @ViewData["AdditLabel"]
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Office.AdditionalInfo)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row ">
+                <!--butttons row-->
+                <div class="col pin">
+                    <button type="button" class="btn btn-primary btn-block">Pinned Office To Home Screen</button>
+                </div>
+            </div>
+            <div class="row ">
+                <!--butttons row-->
+                <div class="col pin">
+                    <button type="button" class="btn btn-primary btn-block" asp-page="/Offices/Index"
+                        asp-route-id=2>Export</button>
+                </div>
+            </div>
+        </div>
+        <div class="col white-text">
+            <!--Title-->
+            <div class="row">
+                <div class="col card">
+
+                    <div class="card-top2">
+                        <div class="card-title">
+                            <h5>Services</h5>
+                        </div>
+                    </div>
+
+                    <dl class="card-text">
+                        <div class="row">
+                            <div class="col">
+                                <table>
+                                    <tr>
+                                        <th>
+                                            Office <br>Services
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(model => model.Office.OfficeServices)
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <table>
+                                    <tr>
+                                        <th>
+                                            Reservable <br>Space
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @ViewData["ReservLabel"]
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <table>
+                                    <tr>
+                                        <th>
+                                            Tech <br>Support
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @ViewData["TechLabel"]
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="row">
+                <div class="col card">
+                    <div class="card-top2">
+                        <div class="card-title">
+                            <h5>Covid</h5>
+                        </div>
+                    </div>
+
+                    <dl class="card-text">
+                        <dd>
+                            <p><b>Office Status - </b>@ViewData["StatusLabel"]</p>
+                        </dd>
+                        <hr>
+                        <dt>
+                            Face Coverings
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Office.FaceCoverings)
+                        </dd>
+                        <hr>
+                        <dt>
+                            Temperature Checks
+                        </dt>
+                        <dd>
+                            @ViewData["TempLabel"]
+                        </dd>
+                        <hr>
+                        <dt>
+                            Physical Distancing
+                        </dt>
+                        <dd>
+                            @ViewData["DistLabel"]
+                        </dd>
+                        <hr>
+                        <dt>
+                            @ViewData["SpecDLabel"]
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Office.SpecialDetails)
+                        </dd>
+                    </dl>
+                </div>
+
+            </div>
+            
+            
+        </div>
+    </div>
+</div>

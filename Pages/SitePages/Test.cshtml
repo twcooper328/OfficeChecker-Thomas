@@ -1,0 +1,74 @@
+﻿@page
+@model OfficeChecker.Pages.SitePages.IndexModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var student = ViewData["Message"];
+}
+
+<div class="container" style="margin-top:30px" >
+  <div class="row">
+
+    <div class="col-sm-6" style="height: 250px">
+        <div class="header">
+            <h2>@Html.DisplayFor(model => model.Office.OfficeName)</h2>
+        </div>
+
+        <p>@Html.DisplayFor(model => model.Office.LocationType)</p>
+        <p>@Html.DisplayFor(model => model.Office.PhoneNumber)</p>
+        <p>@Html.DisplayFor(model => model.Office.Address)</p>
+        <p>@Html.DisplayFor(model => model.Office.OfficeStatus)</p>
+        <p>@Html.DisplayFor(model => model.Office.OfficeServices)</p>
+        <p>@Html.DisplayFor(model => model.Office.Visitors)</p>
+        <p>@Html.DisplayFor(model => model.Office.AdditionalInfo)</p>
+
+    </div>
+    
+        
+    
+    
+    <!--covid box -->
+
+    <div class="col-sm-6" style="height: 250px">
+        <div class="header">
+            <h2>Covid Info</h2>
+        </div>
+        <p>Temperature Check</p>
+        <p>Physical Distancing</p>
+        <p>Special Considerations</p>
+        <p>Details:</p>
+    </div>
+</div>
+    <!--pinned buttons -->
+<div class="container" style="margin-top:30px" >
+  <div class="row">
+<div class="col-sm-12">
+    <button type="button">Pinned Office</button>
+    <button type="button">Pinned Office</button>
+    <button type="button">Pinned Office</button>
+    <button type="button">Pinned Office</button>
+</div>
+    
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+<div class="col-sm-12">
+    <button type="button">Pinned Office</button>
+    <button type="button">Pinned Office</button>
+    <button type="button">Pinned Office</button>
+    <button type="button">Pinned Office</button>
+</div>
+    
+  </div>
+</div>
+
+<p>@Html.DisplayFor(model => model.Office.LocationType)</p>
+        <p>@Html.DisplayFor(model => model.Office.PhoneNumber)</p>
+        <p>@Html.DisplayFor(model => model.Office.Address)</p>
+        <p>@Html.DisplayFor(model => model.Office.OfficeStatus)</p>
+        <p>@Html.DisplayFor(model => model.Office.OfficeServices)</p>
+        <p>@Html.DisplayFor(model => model.Office.Visitors)</p>
+        <p>@Html.DisplayFor(model => model.Office.AdditionalInfo)</p>
+

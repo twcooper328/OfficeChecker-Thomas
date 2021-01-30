@@ -1,0 +1,50 @@
+@page
+@model OfficeChecker.Pages.SitePages.TestModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container row d-flex justify-content-center" style="margin-top:30px" >
+    <div class="row">
+        <div class="col-sm-12" style="">
+            <div class="card bg-dark text-white" style="margin-left: 10px;">
+            <!--Top half  -->
+            <div class="header">
+                <h2 class="text-center">Feedback</h2>
+                <p class="text-center">How would you rate your experience?</p>
+            </div>
+            <div class="container-fluid">
+            
+
+                 <meta name="viewport" content="width=device-width">
+    
+
+
+    <!-- alternate codepen version https://codepen.io/mad-d/pen/aJMPWr?editors=0010 -->
+    <div class="card-body align-items-center d-flex justify-content-center"> 
+        <div class="stars" data-rating="3">
+            <span class="star">&nbsp;</span>
+            <span class="star">&nbsp;</span>
+            <span class="star">&nbsp;</span>
+            <span class="star">&nbsp;</span>
+            <span class="star">&nbsp;</span>
+        </div>
+    </div>
+    
+    
+            
+            <!--bottom half -->
+
+            <p class="text-center">Tell us why:</p>
+             <div class="col-md-7">
+             
+            <textarea id="tb" name="" rows="3" cols="65" placeholder="Comment Here:"></textarea>
+            
+            <div class="pbtn">
+                <button type="button" class="btn btn-secondary">Cancel</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div> 
+        </div>
+    </div>
+</div>

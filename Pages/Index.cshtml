@@ -1,0 +1,142 @@
+﻿@page
+@model OfficeChecker.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var student = ViewData["Message"];
+    int OfficeNum = Convert.ToInt32(ViewData["pagenum"]);
+}
+
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <div class="col-sm-2.5">
+                <h2>@ViewData["HomeLabel"]</h2>
+            </div>
+            <div class="col-xs-12 col-sm-5 text-nowrap">
+                <a asp-area="" asp-page="/Offices/Location" asp-route-id=@OfficeNum>
+                    <h2>@Html.DisplayFor(model => model.Office.OfficeName)</h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="row white-text">
+            <div class="col-md-4 card">
+
+                <div class="card-top1">
+                    <div class="card-title">
+                        <h5>  Info</h5>
+                    </div>
+                </div>
+                <!---Cards-->
+                <dl class="card-text">
+                    <dd>
+                        <p><b>Location Type - </b>@ViewData["LocationLabel"]</p>
+                    </dd>
+                    
+                    <hr>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Office.Address)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Office.Address)
+                    </dd>
+                    <hr>
+                    <dt>
+                        Phone
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Office.PhoneNumber)
+                    </dd>
+                    <hr>
+                    <div class="row">
+                    <div class="col">
+                        <table>
+                            <tr>
+                                <th>
+                                    Reservable Space
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @ViewData["ReservLabel-Home"]
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <table>
+                            <tr>
+                                <th>
+                                    Tech Support
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @ViewData["TechLabel-Home"]
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    </dl>
+                </div>
+            <div class="col card">
+
+                <div class="card-top2">
+                    <div class="card-title">
+                        <h5>Covid</h5>
+                    </div>
+                </div>
+
+                <dl class="card-text">
+                    <dd>
+                        <p><b>Office Status - </b>@ViewData["StatusLabel"]</p>
+                    </dd>
+                    <hr>
+                    <dt>
+                        Face Coverings
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Office.FaceCoverings)
+                    </dd>
+                    <hr>
+                    <dt>
+                        Temperature Checks
+                    </dt>
+                    <dd>
+                        @ViewData["TempLabel"]
+                    </dd>
+                    <hr>
+                    <dt>
+                        Physical Distancing
+                    </dt>
+                    <dd>
+                        @ViewData["DistLabel"] 
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--pinned buttons -->
+<div class="container-fluid pinned-box">
+    <div class="row">
+        <div class="col-sm-3 col-sm-3 pin">
+            <a class="t-btn-tagt btn-block text-nowrap text-center" asp-area="" asp-route-id=5 asp-page="/Offices/Index">St. Charles</a>
+        </div>
+        <div class="col-sm-3 col-sm-3 pin">
+            <a class="t-btn-tagt btn-block text-nowrap text-center" asp-area="" asp-route-id=2 asp-page="/Offices/Index">965 W. Chicago</a>
+        </div>
+        <div class="col-sm-3 col-sm-3 pin">
+            <a class="t-btn-tagt btn-block text-nowrap text-center" asp-area="" asp-route-id=3 asp-page="/Offices/Index">Innovation Hub</a>
+        </div>
+        <div class="col-sm-3 col-sm-3 pin">
+            <a class="t-btn-tagt btn-block text-nowrap text-center" asp-area="" asp-route-id=7 asp-page="/Offices/Index">650 Fifth Avenue</a>
+        </div>
+    </div>
+</div>
+<!--
+<a asp-page="/Offices/Index" asp-route-id="2">View</a>
+-->

@@ -1,0 +1,214 @@
+@page
+@model OfficeChecker.Pages.Offices.EditModel
+@using OfficeChecker.Models
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Office</h1>
+
+<h4>@ViewData["integer test"]</h4>
+
+<div class="container-fluid">
+    <div>
+
+        <div class="row white-text">
+            <div class="col-md-4 card">
+
+                <div class="card-top1">
+                    <div class="card-title">
+                        <h5>  Info</h5>
+                    </div>
+                </div>
+                <!---Cards-->
+                <dl class="card-text">
+                    <dd>
+                        <p><b>Location Type - </b>@ViewData["LocationLabel"]</p>
+                    </dd>
+                    
+                    <hr>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Office.Address)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Office.Address)
+                    </dd>
+                    <hr>
+                    <dt>
+                        Phone
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Office.PhoneNumber)
+                    </dd>
+                    <hr>
+                    <div class="row">
+                    <div class="col">
+                        <table>
+                            <tr>
+                                <th>
+                                    Reservable Space
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @ViewData["ReservLabel-Home"]
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <table>
+                            <tr>
+                                <th>
+                                    Tech Support
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @ViewData["TechLabel-Home"]
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    </dl>
+                </div>
+            <div class="col card">
+
+                <div class="card-top2">
+                    <div class="card-title">
+                        <h5>Covid</h5>
+                    </div>
+                </div>
+
+                <dl class="card-text">
+                    <dd>
+                        <p><b>Office Status - </b>@ViewData["StatusLabel"]</p>
+                    </dd>
+                    <hr>
+                    <dt>
+                        Face Coverings
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Office.FaceCoverings)
+                    </dd>
+                    <hr>
+                    <dt>
+                        Temperature Checks
+                    </dt>
+                    <dd>
+                        @ViewData["TempLabel"]
+                    </dd>
+                    <hr>
+                    <dt>
+                        Physical Distancing
+                    </dt>
+                    <dd>
+                        @ViewData["DistLabel"] 
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Office.ID" />
+            <!-- Office name field-->
+            <div class="form-group">
+                <label asp-for="Office.OfficeName" class="control-label"><strong>Office Name</strong></label>
+                <input asp-for="Office.OfficeName" class="form-control" />
+                <span asp-validation-for="Office.OfficeName" class="text-danger"></span>
+            </div>
+            <!-- Market unit field-->
+            <div class="form-group">
+                <label asp-for="Office.MarketUnit" class="control-label"><strong>Market Unit</strong></label>
+                <select asp-for="Office.MarketUnit" asp-items="Html.GetEnumSelectList<marketUnit>()" class="form-control">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="Office.MarketUnit" class="text-danger"></span>
+            </div>
+            <!-- Office Status field-->
+            <div class="form-group">
+                <label asp-for="Office.OfficeStatus" class="control-label"><strong>Office Status</strong></label>
+                <input asp-for="Office.OfficeStatus" asp-items="Html.GetEnumSelectList<officeStatus>()"class="form-control" />
+                <span asp-validation-for="Office.OfficeStatus" class="text-danger"></span>
+            </div>
+            <!-- City field-->
+            <div class="form-group">
+                <label asp-for="Office.City" class="control-label"><strong>City</strong></label>
+                <input asp-for="Office.City" class="form-control" />
+                <span asp-validation-for="Office.City" class="text-danger"></span>
+            </div>
+            <!-- Phone Number field-->
+            <div class="form-group">
+                <label asp-for="Office.PhoneNumber" class="control-label"><strong>Phone Number</strong></label>
+                <input asp-for="Office.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Office.PhoneNumber" class="text-danger"></span>
+            </div>
+            <!-- Address text field-->
+             <div class="form-group">
+                <label asp-for="Office.Address" class="control-label"><strong>Address</strong></label>
+                <input asp-for="Office.Address" class="form-control" />
+                <span asp-validation-for="Office.Address" class="text-danger"></span><br>
+            </div>
+            <!-- Additional Info text field-->
+             <div class="form-group">
+                <label asp-for="Office.AdditionalInfo" class="control-label"><strong>Additional Info</strong></label>
+                <input asp-for="Office.AdditionalInfo" class="form-control" />
+                <span asp-validation-for="Office.AdditionalInfo" class="text-danger"></span><br>
+            </div>
+
+            <!--Special condsiderations -->
+            <!--Physical Distancing -->
+            <span asp-validation-for="Office.PhysicalDistancing" class="text-danger"></span><br>
+            <div class="form-group">
+                <label asp-for="Office.PhysicalDistancing" class="control-label"><strong>Physical Distancing</strong></label>
+                <input asp-for="Office.PhysicalDistancing" class="form-control" />
+                <span asp-validation-for="Office.PhysicalDistancing" class="text-danger"></span>
+            </div>
+
+            <!--temperature checks -->
+            <span asp-validation-for="Office.TemperatureChecks" class="text-danger"></span><br>
+            <div class="form-group">
+                <label asp-for="Office.TemperatureChecks" class="control-label"><strong>Temperature Checks</strong></label>
+                <input asp-for="Office.TemperatureChecks" class="form-control" />
+                <span asp-validation-for="Office.TemperatureChecks" class="text-danger"></span>
+            </div>
+
+            <!--other protocols -->
+            <span asp-validation-for="Office.OtherProtocols" class="text-danger"></span><br>
+            <div class="form-group">
+                <label asp-for="Office.OtherProtocols" class="control-label"><strong>Other Protocols</strong></label>
+                <input asp-for="Office.OtherProtocols" class="form-control" />
+                <span asp-validation-for="Office.OtherProtocols" class="text-danger"></span>
+            </div>
+
+            <!-- Special Details text field-->
+             <div class="form-group">
+                <label asp-for="Office.SpecialDetails" class="control-label"><strong>Special Details</strong></label>
+                <input asp-for="Office.SpecialDetails" class="form-control" />
+                <span asp-validation-for="Office.SpecialDetails" class="text-danger"></span><br>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
